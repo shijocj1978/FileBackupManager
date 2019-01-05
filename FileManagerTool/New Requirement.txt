@@ -1,0 +1,52 @@
+﻿
+1) Add a provision to backup a file to another location or in the same location itself 
+with a appended timestamp date time so that when a file grows beyond a limit it should 
+take a backup of it from the location and keep it in a back up location.
+This also should provide a provision to delete the files backuped after some time.
+
+5)	Add a UI to show the log messages. It should show seperate tabs for each type of messages 
+for eg: one tab for errors and another for warnings and another for audit logs.
+
+	
+15) Check what happens if ther are two items scheduled for the same time. Say two long run items at 2.pm and the first item will run and then, when the timer is enabled will it consider the second item as starting or it will always consider it as a catchup operation.
+
+18) provde a provision to zip the contents in destination location for single file option.
+
+19) Add a CPU utilization monitor mode so that the operations will be performed when CPU is idle or if user starts operation then it should be paused.
+
+20) Add a provision so that user should be able to Pause the operation for a specific period of time say 10 minutes/1hour/2hours/Skip backup this time.
+
+21)	Currently the data is saved as a binary file which cannot be read and retrived incase of an error or version issue. Make this as a XML text object so that users can read and retrive the data.
+
+23) Update the UI to a WPF Form and then present this a value add for SCE network.
+
+24) Add events (like schedule,on update) to job: - On Wifi /& On network path available. This will enable the user to start the backup operation 
+	as soon as the computer is connected to a specific network like home or office and he can do a backup operation on that time automatically in the background.
+	
+24) Fix the bug in Static logger. If the path for file name is not given then the loggin is crashing, which should not be the case. 
+	it should be able to keep the values and then write it to best available location on applicatin exit or when the logging mode is changed.
+
+25)  Add sub job (it can be called as Tasks) and it should perform a list of sub operations. This will make the users better manage the tasks. 
+Eg: 
+
+Job: Backup All downloaded Mp3 files. 
+Task1: Search for the folders that contains multiple mp3 files. 
+Task2: in the above found folders search and move/delete/copy all files from the folders in the specified extensions (say txt, jpg etc). 
+Task3: Move the files into Songs folder d:\songs\Unsorted. 
+
+27) Provision to Drag and drop a Text/folder object or copy from clipboard will copy both a single folder path or single folder object into text boxes during adding or editing a job option.
+
+30) Fix the bug. Move Mode. If a file is there in destination and if it also ther in source and the mode is Move then nothing happens. The file is supposed to be deleted from the source. But it is not happening. check it out.
+	     
+33) Make the Operations into a WCF Service layer for Enabling the Application to perform Operations on a remote server. Like Corporate enviornments. 
+
+34) While user Makes move mode to Copy then the Cleanup destination will be enabled and next time user runs the clenup it will delete the files in destination because it is not there in source. Give a warning to user to this and also give a list of files which are in risk.
+
+35) Add a module to get the complete manual backup and then shutdown the system. It should get a list of jobs which need to be perfomed manualy one by one and then it should shutdown or standby.
+
+36) Include an option to open the source and destination folder from adshboard itself using a link,button or right click popup menu option.
+
+37) The Last updated on tag in dashboard is not showing correct info . fix it.
+
+38) Since the local source folder is missing after last purge delete/move operation the next job will crash if not folder or file is created. It should instead get into a return true with a log that the source folder not found and continue to next location. 
+
